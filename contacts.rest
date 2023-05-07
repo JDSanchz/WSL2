@@ -34,3 +34,22 @@ content-type: application/json
 ### DELETE contact
 DELETE http://localhost:8080/contacts/6456eddff8a69a5c06aeb207 HTTP/1.1
 
+
+###### USING RENDER LINKS #####
+###All contacts
+https://wslesson12esusdb.onrender.com/contacts
+###Specific ID
+https://wslesson12esusdb.onrender.com/contacts/6456ed77f8a69a5c06aeb204
+
+### Create contact
+POST https://cse341-instructor.herokuapp.com/contacts HTTP/1.1 content-type: application/json
+{
+"firstName":"Ashley", "lastName":"Weaver", "email":"aWeaver@test.com", "favoriteColor":"Brown", "birthday":"06/19/2000"
+}
+### PUT contact
+PUT https://cse341-instructor.herokuapp.com/contacts/6220bcb39cd507e920c75a0b HTTP/1.1 content-type: application/json
+{
+"firstName":"Sarah", "lastName":"Birch", "email":"sarahB@gmail.com", "favoriteColor":"Yellow", "birthday":"06/12/20"
+}
+
+### DELETE contact DELETE https://cse341-instructor.herokuapp.com/contacts/6220e34083149913680f9a64 HTTP/1.1
