@@ -1,7 +1,9 @@
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
-const { initDb } = require('./db/connect');
+const mongodb = require('./db/connect');
+
+const port = process.env.PORT || 8080;
+const app = express();
 
 app
   .use(bodyParser.json())
@@ -10,23 +12,12 @@ app
     next();
   })
   .use('/', require('./routes'));
-  
-initDb((err, db) => {
+
+mongodb.initDb((err) => {
   if (err) {
-    console.error('Error connecting to MongoDB:', err);
-    process.exit(1);
+    console.log(err);
   } else {
-    console.log('Connected to MongoDB');
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
   }
-});
-
-const contactsRouter = require('./routes/contacts');
-app.use('/contacts', contactsRouter);
-// Define a route for the root endpoint
-app.use('/',contactsRouter);
-  
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });

@@ -1,0 +1,2 @@
+# Welcome to the RESTful API readme file!
+## This API supports CRUD operations (Create, Read, Update, Delete) for a resource. You can use HTTP GET requests to retrieve the resource, HTTP POST requests to create a new instance of the resource, HTTP PUT requests to update the existing resource, and HTTP DELETE requests to delete the resource. Please see the API documentation for more information on how to use these endpoints.

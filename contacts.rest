@@ -1,11 +1,36 @@
 ### Get all contacts
-http://localhost:3000/contacts
+GET http://localhost:8080/contacts
 
 
 ### Get contact by id
-http://localhost:3000/contacts/644dac3aea9ecdabf97fd499
+GET http://localhost:8080/contacts/
 
-### Get all in main
-http://localhost:3000/
+### Create contact
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
 
+{
+    "firstName":"Lmadrian",
+    "lastName":"Wallnut",
+    "email":"aWeaver@test.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
+// LOCALHOST
+### Get all contacts
+GET http://localhost:8080/contacts
+### PUT contact
+PUT http://localhost:8080/contacts/6456ed71f8a69a5c06aeb202 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Sarah",
+    "lastName":"Birch",
+    "email":"test@gmail.com",
+    "favoriteColor":"Green",
+    "birthday":"12/12/20"
+}
+
+### DELETE contact
+DELETE http://localhost:8080/contacts/6456eddff8a69a5c06aeb207 HTTP/1.1
 
