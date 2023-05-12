@@ -9,7 +9,7 @@ const doc = {
         title: "My API",
         description: "Documentation for my API"
     },
-    host: "localhost:8080",
+    host: "https://wslesson12esusdb.onrender.com",
     basePath: "/",
     schemes: ['http', 'https'],
     consumes: ['application/json'],
