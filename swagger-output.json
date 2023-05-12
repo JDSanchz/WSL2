@@ -5,7 +5,7 @@
     "title": "My API",
     "description": "Documentation for my API"
   },
-  "host": "https://wslesson12esusdb.onrender.com", 
+  "host": "localhost:8080", 
   "basePath": "/",
   "schemes": [
     "http",
