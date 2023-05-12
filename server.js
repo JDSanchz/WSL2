@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const fs = require('fs');  // Add this line
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -12,6 +13,12 @@ app
     next();
   })
   .use('/', require('./routes'));
+
+if (fs.existsSync('./swagger-output.json')) {  // Check if the file exists
+  const swaggerUi = require('swagger-ui-express');
+  const swaggerDocument = require('./swagger-output.json');
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+}
 
 mongodb.initDb((err) => {
   if (err) {
